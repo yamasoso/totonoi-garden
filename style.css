@@ -26,13 +26,13 @@ h1, h2, h3 {
 }
 
 main {
-    max-width: 960px;
+    max-width: 1200px;
     margin: auto;
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 section {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 /* ヒーローセクション */
@@ -58,6 +58,11 @@ section {
     border-radius: 8px;
 }
 
+/* 紹介エリア */
+.about {
+  display: block;
+}
+
 /* ギャラリー */
 #gallery {
     margin-top: 2rem;
@@ -65,8 +70,8 @@ section {
 
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
 }
 
 .gallery-container img {
@@ -80,7 +85,7 @@ section {
 .icon {
     width: 50px;
     height: 50px;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 /* アクセス情報 */
@@ -114,7 +119,7 @@ footer {
     padding-top: 1rem;
 }
 
-/* 料金表テーブルのスタイル */
+/* 料金表テーブル */
 .price-table {
     width: 100%;
     border-collapse: collapse;
@@ -142,9 +147,10 @@ footer {
     background-color: #f0f0f0;
 }
 
+/* 動画 */
 .intro-video {
     text-align: center;
-    margin: 40px auto;
+    margin-bottom: 20px;
     max-width: 900px;
     padding: 0 20px;
 }
@@ -162,7 +168,7 @@ footer {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-/* 利用規約セクション */
+/* 利用規約 */
 .terms {
     padding: 2rem;
     background: #fff;
@@ -178,8 +184,8 @@ footer {
 }
 
 .terms-box {
-    max-height: 400px;       /* 高さを制限 */
-    overflow-y: auto;        /* 縦スクロール */
+    max-height: 400px;
+    overflow-y: auto;
     padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -187,17 +193,70 @@ footer {
     line-height: 1.6;
 }
 
-.terms-box h3 {
-    margin-top: 1rem;
-    color: #444;
-    font-size: 1.1rem;
+/* ---- レスポンシブ調整 ---- */
+
+/* スマホ (〜600px) */
+@media (max-width: 600px) {
+    header nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero-image {
+        height: 250px;
+    }
+
+    .hero-text {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .price-table {
+        font-size: 0.8rem;
+    }
+
+    .terms-box {
+        max-height: 300px;
+        padding: 0.8rem;
+    }
 }
 
-.terms-box ul {
-    margin: 0.5rem 0 1rem 1.5rem;
-    list-style: disc;
+/* タブレット (601px〜991px) */
+@media (min-width: 601px) and (max-width: 991px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-image {
+        height: 320px;
+    }
+
+    .price-table {
+        font-size: 0.9rem;
+    }
 }
 
-.terms-box p {
-    margin-bottom: 1rem;
+/* PC (992px〜) */
+@media (min-width: 992px) {
+    .about {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+    .intro-video {
+        flex: 2;
+    }
+    .about .text {
+        flex: 1;
+    }
 }
