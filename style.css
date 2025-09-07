@@ -260,3 +260,10 @@ footer {
         flex: 1;
     }
 }
+
+
+/* ページ幅を画面サイズに収める */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* 横スクロール禁止 */
+}
